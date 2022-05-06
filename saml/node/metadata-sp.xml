@@ -1,0 +1,9 @@
+<EntityDescriptor entityID="https://www.jiandaoyun.com/sso/saml/5b4bf4398aa34804a574bfcb/iss"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata" 
+    xmlns:assertion="urn:oasis:names:tc:SAML:2.0:assertion" 
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+    <SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <AssertionConsumerService index="0" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://www.jiandaoyun.com/sso/saml/5b4bf4398aa34804a574bfcb/acs"></AssertionConsumerService>
+    </SPSSODescriptor>
+</EntityDescriptor>

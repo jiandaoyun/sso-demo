@@ -1,0 +1,24 @@
+{
+    "name": "@jdy/demo-sso-saml-node",
+    "version": "1.0.0",
+    "description": "Demo project for SSO(SAML) with Jiandaoyun.",
+    "main": "app.js",
+    "dependencies": {
+        "ejs": "^2.7.4",
+        "express": "^4.18.1",
+        "samlify": "^2.8.4"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "SSO",
+        "Jiandaoyun"
+    ],
+    "author": "vista@fanruan.com",
+    "license": "MIT",
+    "engine": {
+        "node": ">=18.1.0"
+    }
+}

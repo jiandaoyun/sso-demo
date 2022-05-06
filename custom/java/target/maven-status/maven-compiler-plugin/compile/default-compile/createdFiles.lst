@@ -1,0 +1,5 @@
+META-INF/spring-configuration-metadata.json
+com/jiandaoyun/demo/sso/SSOApplication.class
+com/jiandaoyun/demo/sso/SSOController.class
+com/jiandaoyun/demo/sso/SSOConfig.class
+com/jiandaoyun/demo/sso/SSOService.class

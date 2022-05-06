@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSO Redirect</title>
+</head>
+
+<body>
+    <form name="sso" method="post" action="<%= acs %>">
+        <input name="SAMLResponse" type="hidden" value="<%= SAMLResponse %>">
+        <input name="RelayState" type="hidden" value="<%= RelayState %>">
+    </form>
+    <script>
+        document.forms['sso'].submit();
+    </script>
+</body>
+
+</html>

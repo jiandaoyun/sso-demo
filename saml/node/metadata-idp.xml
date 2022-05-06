@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://localhost:8080/sso">
+    <IDPSSODescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDszCCApqgAwIBAgIBADANBgkqhkiG9w0BAQUFADBzMQswCQYDVQQGEwJjbjEQ
+MA4GA1UECAwHSmlhbmdzdTETMBEGA1UECgwKSmlhbmRhb3l1bjEbMBkGA1UEAwwS
+d3d3LmppYW5kYW95dW4uY29tMSAwHgYJKoZIhvcNAQkBFhF2aXN0YUBmYW5ydWFu
+LmNvbTAeFw0xOTA3MTAwNzU0NDlaFw0yMzA3MTAwNzU0NDlaMHMxCzAJBgNVBAYT
+AmNuMRAwDgYDVQQIDAdKaWFuZ3N1MRMwEQYDVQQKDApKaWFuZGFveXVuMRswGQYD
+VQQDDBJ3d3cuamlhbmRhb3l1bi5jb20xIDAeBgkqhkiG9w0BCQEWEXZpc3RhQGZh
+bnJ1YW4uY29tMIIBIzANBgkqhkiG9w0BAQEFAAOCARAAMIIBCwKCAQIAnXzqx7jP
+fxDaS0+2g4rPjy1X4GumkXdsxCQoKk6BIkBH7HyiP8qZiP8kN7Fiipn7sfckh2Bh
+tz7Z/zZyKX13uD59oEmf6G5OwXh4hm4kEFv6KLtHHhaBXdg/NWEuv9YTo92dq9g8
+aCRy6ir8g7+JMg4RRZNLmI8jWzrBLf27FbxwmNSo/DUXI7rPkOBUW1aTldsTbizk
+IaIgayc+O/eVtD8K1L70l1BmD33C/PLYvwrNXbE/yulXTTIhsjQvn00zXCTBEw0u
+Xp+P/nSJyZLiyeHl1CHakeQu2vOzIhnK8O6NwwlaDpeXpY0lsH1OIzGLd4egGp4I
+GZMSSnfe253Jgn0CAwEAAaNQME4wHQYDVR0OBBYEFBzQJLdKJO4tsv3eOIIxuBws
+lxXmMB8GA1UdIwQYMBaAFBzQJLdKJO4tsv3eOIIxuBwslxXmMAwGA1UdEwQFMAMB
+Af8wDQYJKoZIhvcNAQEFBQADggECAAo6D2bGSjzjmLongDN1/D2fH7TsL/Hh6LLH
+cjJrjRDGuSxStpGiPkQHfKQF3AulD/pG58nqMECMWhzwCkKfWBX2zeSACWoZKVz/
+Y/ZOTrdMbIapz9PAph9ANeJTXTlOS+sfwRtdX4jTGHFX0R8LWg1ioR2fyS0Ey0ca
+hul1Ss5S/6zdvBcqJwWEiheqTJSQ5gti7vv/PwvkjPqRUCAU4nCYfgCNHta06zz6
+reQzNt3I00NiQSxfDuvvTJI7eCHqeGQpBOKoX0kiaCzDnEdyn6K80SJgSnrlHxqo
+zCegZc/GEyWGPW4fKCiBR7iZkhFMsbOm08hM9aGAsyyTXPKqC4mq</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/slo"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/sso"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8080/sso"/>
+    </IDPSSODescriptor>
+</EntityDescriptor>

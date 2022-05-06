@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "sso",
+      "type": "com.jiandaoyun.demo.sso.SSOConfig",
+      "sourceType": "com.jiandaoyun.demo.sso.SSOConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "sso.acs",
+      "type": "java.lang.String",
+      "sourceType": "com.jiandaoyun.demo.sso.SSOConfig"
+    },
+    {
+      "name": "sso.issuer",
+      "type": "java.lang.String",
+      "sourceType": "com.jiandaoyun.demo.sso.SSOConfig"
+    },
+    {
+      "name": "sso.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.jiandaoyun.demo.sso.SSOConfig"
+    },
+    {
+      "name": "sso.username",
+      "type": "java.lang.String",
+      "sourceType": "com.jiandaoyun.demo.sso.SSOConfig"
+    }
+  ],
+  "hints": []
+}

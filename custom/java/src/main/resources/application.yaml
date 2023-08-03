@@ -1,5 +1,5 @@
 sso:
   acs: https://www.jiandaoyun.com/sso/custom/5b4bf4398aa34804a574bfcb/acs
   issuer: com.angelmsger
-  username: angelmsger
+  username: 'angelmsger'
   secret: fHVI4PztDMHShqZzkLbuS8hn

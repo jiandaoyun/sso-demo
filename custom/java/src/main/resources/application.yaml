@@ -1,5 +1,9 @@
 sso:
-  acs: https://www.jiandaoyun.com/sso/custom/5b4bf4398aa34804a574bfcb/acs
+  # acs：简道云中生成的认证返回地址
+  acs: https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/sso/custom/acs
+  # issuer：Issuer URL
   issuer: com.angelmsger
-  username: 'angelmsger'
+  # username：需要进行单点登录的成员ID
+  username: 'wxopen-nx2xjd19z4mv'
+  # secret：认证密钥
   secret: fHVI4PztDMHShqZzkLbuS8hn

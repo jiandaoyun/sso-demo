@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- entityID: 简道云中配置的Issuer URL -->
 <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://localhost:8080/sso">
     <IDPSSODescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
         <KeyDescriptor use="signing">

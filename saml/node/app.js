@@ -7,6 +7,7 @@ samlify.setSchemaValidator({
 });
 
 const config = {
+    // username：需要进行单点登录的成员ID
     username: 'angelmsger'
 };
 

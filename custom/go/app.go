@@ -10,14 +10,27 @@ import (
 )
 
 const (
-	acs      = "https://www.jiandaoyun.com/sso/custom/5b4bf4398aa34804a574bfcb/acs"
-	issuer   = "com.angelmsger"
+	// acs：简道云中生成的认证返回地址
+	acs = "https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/sso/custom/acs"
+	// issuer：Issuer URL
+	issuer = "com.angelmsger"
+	// username：需要进行单点登录的成员ID
 	username = "angelmsger"
-	secret   = "fHVI4PztDMHShqZzkLbuS8hn"
+	// secret：认证密钥
+	secret = "fHVI4PztDMHShqZzkLbuS8hn"
 )
 
 func ValidBody(body jwt.MapClaims) bool {
-	return body["iss"] == "com.jiandaoyun" && body["aud"] == issuer && body["type"] == "sso_req"
+	if body["iss"] != "com.jiandaoyun" || body["type"] != "sso_req" {
+		return false
+	}
+
+	// 简道云中未配置 Issuer URL 时，注释以下代码
+	if body["aud"] != issuer {
+		return false
+	}
+
+	return true
 }
 
 func ValidToken(query string) bool {
@@ -36,15 +49,18 @@ func ValidToken(query string) bool {
 
 func GetTokenByUsername(username string) (string, error) {
 	now := time.Now()
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"type":     "sso_res",
-		"username": username,
-		"iss":      issuer,
-		"aud":      "com.jiandaoyun",
-		"nbf":      now.Unix(),
-		"iat":      now.Unix(),
-		"exp":      now.Add(1 * time.Minute).Unix(),
-	})
+	token := jwt.NewWithClaims(
+		// 与简道云中配置的 认证加密算法 保持一致
+		jwt.SigningMethodHS256, jwt.MapClaims{
+			"type":     "sso_res",
+			"username": username,
+			// 简道云中未配置 Issuer URL 时，注释以下一行
+			"iss": issuer,
+			"aud": "com.jiandaoyun",
+			"nbf": now.Unix(),
+			"iat": now.Unix(),
+			"exp": now.Add(1 * time.Minute).Unix(),
+		})
 	return token.SignedString([]byte(secret))
 }
 

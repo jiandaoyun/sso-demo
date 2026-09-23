@@ -44,9 +44,11 @@ class SSOService {
     @Getter @Setter @Autowired private SSOConfig ssoConfig;
 
     public String getResponse(String request) {
+        // 与简道云中配置的 认证加密算法 保持一致
         Algorithm algorithm = Algorithm.HMAC256(this.ssoConfig.getSecret());
         JWTVerifier verifier = JWT.require(algorithm)
             .withIssuer("com.jiandaoyun")
+            // 简道云中未配置 Issuer URL 时，注释以下一行
             .withAudience(this.ssoConfig.getIssuer())
             .build();
         DecodedJWT decoded = verifier.verify(request);
@@ -59,6 +61,7 @@ class SSOService {
         return JWT.create()
             .withClaim("type", "sso_res")
             .withClaim("username", this.ssoConfig.getUsername())
+            // 简道云中未配置 Issuer URL 时，注释以下一行
             .withIssuer(this.ssoConfig.getIssuer())
             .withAudience("com.jiandaoyun")
             .withExpiresAt(calendar.getTime())

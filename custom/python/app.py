@@ -6,9 +6,13 @@ from jwt import InvalidTokenError
 
 
 class Const:
-    ACS = 'https://www.jiandaoyun.com/sso/custom/5b4bf4398aa34804a574bfcb/acs'
+    # ACS：简道云中生成的认证返回地址
+    ACS = 'https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/sso/custom/acs'
+    # SECRET：认证密钥
     SECRET = 'fHVI4PztDMHShqZzkLbuS8hn'
+    # ISSUER：Issuer URL
     ISSUER = 'com.angelmsger'
+    # USERNAME：需要进行单点登录的成员ID
     USERNAME = 'angelmsger'
 
 
@@ -19,8 +23,10 @@ def valid_token(query):
     try:
         token = jwt.decode(
             query, Const.SECRET,
+            # 简道云中未配置 Issuer URL 时，注释以下一行
             audience=Const.ISSUER,
             issuer='com.jiandaoyun',
+            # 与简道云中配置的 认证加密算法 保持一致
             algorithms=['HS256']
         )
         return token.get('type') == 'sso_req'
@@ -33,12 +39,15 @@ def get_token_from_username(username):
     return jwt.encode({
         "type": "sso_res",
         'username': username,
+        # 简道云中未配置 Issuer URL 时，注释以下一行
         'iss': Const.ISSUER,
         "aud": "com.jiandaoyun",
         "nbf": now,
         "iat": now,
         "exp": now + timedelta(seconds=60),
-    }, Const.SECRET, algorithm='HS256')
+    }, 
+    # algorithm 与简道云中配置的 认证加密算法 保持一致
+    Const.SECRET, algorithm='HS256')
 
 
 @app.route('/sso', methods=['GET'])

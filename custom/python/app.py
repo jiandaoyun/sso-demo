@@ -21,7 +21,7 @@ class Const:
     # 与简道云中配置的认证算法保持一致。
     ALGORITHM = 'HS256'
     # USERNAME：需要进行单点登录的成员ID
-    USERNAME = 'R-3VjoSB7G'
+    USERNAME = 'angelmsger'
 
 
 app = Flask(__name__)

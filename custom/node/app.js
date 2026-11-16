@@ -14,7 +14,7 @@ const config = {
     // 与简道云中配置的认证算法保持一致
     algorithm: 'HS256',
     // username：需要进行单点登录的成员ID
-    username: 'R-3VjoSB7G'
+    username: 'angelmsger'
 };
 
 const app = express();

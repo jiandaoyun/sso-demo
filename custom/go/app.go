@@ -23,7 +23,7 @@ const (
 	// issuer：Issuer URL
 	issuer = "com.angelmsger"
 	// username：需要进行单点登录的成员ID
-	username = "R-3VjoSB7G"
+	username = "angelmsger"
 	// secret：认证密钥
 	secret = "fHVI4PztDMHShqZzkLbuS8hn"
 )

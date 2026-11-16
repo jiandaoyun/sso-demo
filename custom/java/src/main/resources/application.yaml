@@ -1,9 +1,13 @@
 sso:
   # acs：简道云中生成的认证返回地址
   acs: https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/sso/custom/acs
+  # 未传入登出回程地址时，跳回租户登录页。
+  logout-return-url: https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/signin
   # issuer：Issuer URL
   issuer: com.angelmsger
+  # 与简道云中配置的认证算法保持一致。
+  algorithm: HS256
   # username：需要进行单点登录的成员ID
-  username: 'wxopen-nx2xjd19z4mv'
+  username: 'R-3VjoSB7G'
   # secret：认证密钥
   secret: fHVI4PztDMHShqZzkLbuS8hn

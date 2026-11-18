@@ -47,7 +47,8 @@ function handleLogout(array $config, Key $key): void
    // $index = $decoded['index'] ?? null;
    // 实际接入时，可以根据index删除
 
-   // 校验登出地址并回跳。
+   // 示例只做 URL 基本校验。redirect_uri 不在 JWT 签名范围内。
+   // 实际接入时只跳转到预先配置的可信地址，避免开放重定向。详见 custom/README.md 的「跳转校验提醒」。
    $redirectUri = $_GET['redirect_uri'] ?? $config['logout_return_url'];
    $target = is_string($redirectUri) ? parse_url($redirectUri) : false;
    if ($target === false || filter_var($redirectUri, FILTER_VALIDATE_URL) === false ||

@@ -1,24 +1,9 @@
-# Overview
+# Python 自定义 SSO 示例
 
-Python implemention of SSO demo for [Jiandaoyun](https://www.jiandaoyun.com/). Travel around the [Doc of Jiandaoyun](https://hc.jiandaoyun.com/open/11434) and [homepage of JWT](https://jwt.io/) to lean what it is.
-
-Project is tested with Python 3.9.12.
-
-# Build
-
-Modify the value in `app.py` to adapt your configuration and run:
+按[联调步骤](../README.md#联调步骤)修改 `app.py` 中的 `Const`，然后在当前目录创建虚拟环境、安装依赖并启动：
 
 ```shell
-pip install -r requirements.txt
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python app.py
 ```
-
-# Run
-
-Modify the `Const` in `app.py` to adapt your configuration and run:
-
-```shell
-python app.py
-# or
-flask run --port=8080
-```
-

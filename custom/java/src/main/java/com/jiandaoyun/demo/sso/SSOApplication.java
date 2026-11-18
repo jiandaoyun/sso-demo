@@ -148,7 +148,8 @@ class SSOController {
             return invalidLogout("无效的单点登出请求。");
         }
 
-        // 校验登出地址。
+        // 示例只做 URL 基本校验。redirect_uri 不在 JWT 签名范围内。
+        // 实际接入时只跳转到预先配置的可信地址，避免开放重定向。详见 custom/README.md 的「跳转校验提醒」。
         List<String> redirects = query.get("redirect_uri");
         try {
             if (redirects != null && redirects.size() != 1) {

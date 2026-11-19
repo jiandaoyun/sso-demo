@@ -1,6 +1,8 @@
 sso:
   # acs：简道云中生成的认证返回地址
   acs: https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/sso/custom/acs
+  # 未传入登出回程地址时，跳回租户登录页。
+  logout-return-url: https://portal.finecloud.com/portal/tenant/620a31c23e7c5a00081e7acf/signin
   # issuer：Issuer URL
   issuer: com.angelmsger
   # username：需要进行单点登录的成员ID

@@ -14,7 +14,7 @@ $config = [
    // issuer：Issuer URL
    'issuer' => 'com.angelmsger',
    // username：需要进行单点登录的成员ID
-   'username' => 'angelmsger'
+   'username' => 'R-3VjoSB7G'
 ];
 
 // 与简道云中配置的认证加密算法保持一致。
@@ -38,7 +38,13 @@ function handleLogout(array $config, Key $key): void
    } catch (DomainException | UnexpectedValueException $error) {
       $decoded = [];
    }
-   if (($decoded['type'] ?? null) !== 'slo_req') {
+   // 配置了 Issuer URL 时，登出请求的 aud 必须包含该值。
+   $expectedAudience = $config['issuer'] ?? '';
+   $audience = $decoded['aud'] ?? null;
+   $validAudience = $expectedAudience === '' || $audience === $expectedAudience ||
+      (is_array($audience) && in_array($expectedAudience, $audience, true));
+   if (($decoded['type'] ?? null) !== 'slo_req' ||
+       ($decoded['iss'] ?? null) !== 'com.jiandaoyun' || !$validAudience) {
       badRequest('无效的单点登出请求。');
       return;
    }
